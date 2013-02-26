@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Map;
 
 public class Event {
@@ -12,14 +12,7 @@ public class Event {
 	Map<Integer,Person> attendees;
 	
 	
-	public Event(String name, int id, Date startDate, Date endDate,
-			String description) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.description = description;
+	public Event() {
 	}
 
 	public boolean addAttendee(Person person){

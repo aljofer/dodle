@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,11 +16,14 @@ public class DodleModel{
 	public Person newPerson(String name, int userId, String description){
 		
 		// find the first unused id
-		int id = 0;
+		int id = 1;
 		while(events.containsKey(id)) id++;
 
-		
-		Person newPerson = new Person(name, id, userId, description);
+		Person newPerson = new Person();
+		newPerson.setName(name);
+		newPerson.setId(id);
+		newPerson.setUserId(userId);
+		newPerson.setDescription(description);
 		persons.put(id, newPerson);
 
 		return newPerson;
@@ -44,10 +47,15 @@ public class DodleModel{
 	public Event newEvent(String name, Date startDate, Date endDate, String description){
 		
 		// find the first unused id
-		int id = 0;
+		int id = 1;
 		while(events.containsKey(id)) id++;
 
-		Event newEvent = new Event(name, id, startDate, endDate, description);
+		Event newEvent = new Event();
+		newEvent.setName(name);
+		newEvent.setId(id);
+		newEvent.setStartDate(startDate);
+		newEvent.setEndDate(endDate);
+		newEvent.setDescription(description);
 		events.put(id, newEvent);
 
 		return newEvent;
@@ -71,10 +79,12 @@ public class DodleModel{
 	public Group newGroup(String name){
 		
 		// find the first unused id
-		int id = 0;
+		int id = 1;
 		while(groups.containsKey(id)) id++;
 
-		Group newGroup = new Group(name, id);
+		Group newGroup = new Group();
+		newGroup.setName(name);
+		newGroup.setId(id);
 		groups.put(id, newGroup);
 
 		return newGroup;

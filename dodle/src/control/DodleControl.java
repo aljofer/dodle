@@ -7,6 +7,18 @@ import view.DodleView;
  */
 public class DodleControl {
 
+	static DodleControl instance;
+	static DodleModel model;
+	static DodleView view;
+	
+	
+	public static void main(String[] args) {
+		getControl();
+		getModel();
+		getView();
+		
+	}
+	
 	public static DodleModel getModel() {
 		if(model == null) {
 	         model = new DodleModel();
@@ -28,12 +40,5 @@ public class DodleControl {
 		return instance;
 	}
 
-	static DodleControl instance;
-	static DodleModel model;
-	static DodleView view;
-	
-	
-	public static void main(String[] args) {
-	}
 
 }

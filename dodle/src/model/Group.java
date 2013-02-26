@@ -9,10 +9,7 @@ public class Group {
 	Map<Integer,Person> members = new HashMap<Integer,Person>();
 
 
-	public Group(String name, int id) {
-		super();
-		this.name = name;
-		this.id = id;
+	public Group() {
 	}
 
 	// business logic...

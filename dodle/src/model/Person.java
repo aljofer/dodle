@@ -11,12 +11,7 @@ public class Person {
 	Map<Integer, Group> groups;
 	Map<Integer, Event> schedule;
 	
-	public Person(String name, int id, int userId, String description) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.userId = userId;
-		this.description = description;
+	public Person() {
 	}
 
 	
