@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import control.DodleControl;
 import model.DodleModel;
 import view.DodleView;
-import model.Event;
-import model.Group;
-import model.Person;
+import model.DodleEvent;
+import model.DodleGroup;
+import model.DodlePerson;
 
 /*
  * This is a test class for the JUnit tests. Tests will be implemented here before the feature they test are implemented in their respective classes.

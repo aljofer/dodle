@@ -3,22 +3,22 @@ package model;
 import java.sql.Date;
 import java.util.Map;
 
-public class Event {
+public class DodleEvent {
 	String name;
 	Integer id;
 	Date startDate;
 	Date endDate;
 	String description;
-	Map<Integer,Person> attendees;
+	Map<Integer,DodlePerson> attendees;
 	
 	
-	public Event() {
+	public DodleEvent() {
 	}
 
-	public boolean addAttendee(Person person){
+	public boolean addAttendee(DodlePerson dodlePerson){
 		boolean done = false;
-		if(!attendees.containsKey(person.getId())) {
-			attendees.put(person.getId(), person);
+		if(!attendees.containsKey(dodlePerson.getId())) {
+			attendees.put(dodlePerson.getId(), dodlePerson);
 			done = true;
 		}
 		return done;
@@ -71,10 +71,10 @@ public class Event {
 		this.description = description;
 	}
 
-	public Map<Integer, Person> getAttendees() {
+	public Map<Integer, DodlePerson> getAttendees() {
 		return attendees;
 	}
-	public void setAttendees(Map<Integer, Person> attendees) {
+	public void setAttendees(Map<Integer, DodlePerson> attendees) {
 		this.attendees = attendees;
 	}
 

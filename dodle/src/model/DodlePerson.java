@@ -2,40 +2,40 @@ package model;
 
 import java.util.Map;
 
-public class Person {
+public class DodlePerson {
 	
 	String name;
 	Integer id;
 	Integer userId;
 	String description;
-	Map<Integer, Group> groups;
-	Map<Integer, Event> schedule;
+	Map<Integer, DodleGroup> dodleGroups;
+	Map<Integer, DodleEvent> schedule;
 	
-	public Person() {
+	public DodlePerson() {
 	}
 
 	
 	// business logic... 
-	public boolean addGroup(Group group){
+	public boolean addGroup(DodleGroup dodleGroup){
 		boolean done = false;
-		if(!groups.containsKey(group.getId())) {
-			groups.put(group.getId(), group);
+		if(!dodleGroups.containsKey(dodleGroup.getId())) {
+			dodleGroups.put(dodleGroup.getId(), dodleGroup);
 			done = true;
 		}
 		return done;
 	}
 	public boolean deleteGroup(int id){
 		boolean done = false;
-		if(groups.containsKey(id)) {
-			groups.remove(id);
+		if(dodleGroups.containsKey(id)) {
+			dodleGroups.remove(id);
 			done = true;
 		}
 		return done;
 	}
-	public boolean addEvent(Event event){
+	public boolean addEvent(DodleEvent dodleEvent){
 		boolean done = false;
-		if(!schedule.containsKey(event.getId())) {
-			schedule.put(event.getId(), event);
+		if(!schedule.containsKey(dodleEvent.getId())) {
+			schedule.put(dodleEvent.getId(), dodleEvent);
 			done = true;
 		}
 		return done;
@@ -75,16 +75,16 @@ public class Person {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Map<Integer, Group> getGroups() {
-		return groups;
+	public Map<Integer, DodleGroup> getGroups() {
+		return dodleGroups;
 	}
-	public void setGroups(Map<Integer, Group> groups) {
-		this.groups = groups;
+	public void setGroups(Map<Integer, DodleGroup> dodleGroups) {
+		this.dodleGroups = dodleGroups;
 	}
-	public Map<Integer, Event> getSchedule() {
+	public Map<Integer, DodleEvent> getSchedule() {
 		return schedule;
 	}
-	public void setSchedule(Map<Integer, Event> schedule) {
+	public void setSchedule(Map<Integer, DodleEvent> schedule) {
 		this.schedule = schedule;
 	}
 	

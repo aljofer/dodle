@@ -3,20 +3,20 @@ package model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Group {
+public class DodleGroup {
 	String name;
 	int id;
-	Map<Integer,Person> members = new HashMap<Integer,Person>();
+	Map<Integer,DodlePerson> members = new HashMap<Integer,DodlePerson>();
 
 
-	public Group() {
+	public DodleGroup() {
 	}
 
 	// business logic...
-	public boolean addPerson(Person person){
+	public boolean addPerson(DodlePerson dodlePerson){
 		boolean done = false;
-		if(!members.containsKey(person.getId())) {
-			members.put(person.getId(), person);
+		if(!members.containsKey(dodlePerson.getId())) {
+			members.put(dodlePerson.getId(), dodlePerson);
 			done = true;
 		}
 		return done;
@@ -45,10 +45,10 @@ public class Group {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Map<Integer,Person> getMembers() {
+	public Map<Integer,DodlePerson> getMembers() {
 		return members;
 	}
-	public void setMembers(Map<Integer, Person> members) {
+	public void setMembers(Map<Integer, DodlePerson> members) {
 		this.members = members;
 	}
 }
