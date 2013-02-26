@@ -7,28 +7,33 @@ import view.DodleView;
  */
 public class DodleControl {
 
-	public DodleModel getModel() {
+	public static DodleModel getModel() {
+		if(model == null) {
+	         model = new DodleModel();
+	      }
 		return model;
 	}
 
-	public void setModel(DodleModel model) {
-		this.model = model;
-	}
-
-	public DodleView getView() {
+	public static DodleView getView() {
+		if(view == null) {
+	         view = new DodleView();
+	      }
 		return view;
 	}
-
-	public void setView(DodleView view) {
-		this.view = view;
+	
+	public static DodleControl getControl() {
+		if(instance == null) {
+	         instance = new DodleControl();
+	      }
+		return instance;
 	}
 
+	static DodleControl instance;
 	static DodleModel model;
 	static DodleView view;
 	
+	
 	public static void main(String[] args) {
-		model = new DodleModel();
-		view = new DodleView();
 	}
 
 }

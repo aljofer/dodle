@@ -22,7 +22,30 @@ public class Event {
 		this.description = description;
 	}
 
+	public boolean addAttendee(Person person){
+		boolean done = false;
+		if(!attendees.containsKey(person.getId())) {
+			attendees.put(person.getId(), person);
+			done = true;
+		}
+		return done;
+	}
 	
+	public boolean deleteAttendee(Integer id){
+		boolean done = false;
+		if(attendees.containsKey(id)) {
+			attendees.remove(id);
+			done = true;
+		}
+		return done;
+	}
+	
+	public void changeDate(Date newStart, Date newEnd){
+		this.startDate = newStart;
+		this.endDate = newEnd;
+	}
+	
+	// getters and setters for persistence...
 	
 	public String getName() {
 		return name;
@@ -61,10 +84,5 @@ public class Event {
 	public void setAttendees(Map<Integer, Person> attendees) {
 		this.attendees = attendees;
 	}
-	public boolean addAttendee(Person person){
-		return true;
-	}
-	public boolean deleteAttendee(Integer id){
-		return true;
-	}
+
 }
