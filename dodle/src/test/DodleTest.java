@@ -14,13 +14,14 @@ import model.DodlePerson;
  */
 
 public class DodleTest{
-	//test preparation...
-	DodleControl controlToTest = new DodleControl();
-	DodleModel testModel = new DodleModel();
-	DodleView testView = new DodleView();
+
+
+
 	
 	@Test
 	public void testDodleControl(){
+		//test preparation...
+		DodleControl controlToTest = new DodleControl();
 		//let's see whether the constructor worked...
 		assertNotNull(DodleControl.getControl());
 		assertNotNull(DodleControl.getModel());
@@ -29,8 +30,28 @@ public class DodleTest{
 	
 	@Test
 	public void testDodleModel(){		
+		DodleModel testModel = new DodleModel();
+	}
 	
+	@Test
+	public void testDodleGroup(){
+		DodleGroup testGroup = new DodleGroup();
+		testGroup.setName("Testgroup");
+		testGroup.setId(23);
+	}
+	
+	@Test
+	public void testDodlePerson(){
 		
+	}
+	
+	@Test
+	public void testDodleEvent(){
+		
+	}
+	@Test
+	public void testDodleView(){
+		DodleView testView = new DodleView();
 	}
 	
 }

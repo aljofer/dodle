@@ -8,7 +8,7 @@ import java.util.Map;
  * This is the model part of MVC. This class will handle all the data and will, later on, handle persitence. (I.e. database connectivity.)
  */
 public class DodleModel{
-	Map<Integer, DodleGroup> dodleGroups = new HashMap<Integer, DodleGroup>();
+	Map <Integer, DodleGroup> dodleGroups = new HashMap<Integer, DodleGroup>();
 	Map <Integer, DodlePerson> dodlePersons = new HashMap<Integer, DodlePerson>();
 	Map <Integer, DodleEvent> dodleEvents = new HashMap<Integer, DodleEvent>();
 
