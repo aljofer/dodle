@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
@@ -17,27 +16,23 @@ public class DodleView {
 	Toolkit.getDefaultToolkit().setDynamicLayout(true);
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	window.setSize( dim.width/2 , dim.height/2 );
-	window.setLocation( dim.width/4, dim.height/4 );
+	window.setLocationRelativeTo(null);
 	
 	/* That's great, now let's fill it with actual things we want to have...
 	*
 	*/
 	
-	//first we need a panel
-	JPanel panel = new JPanel();
-	panel.setLayout( new FlowLayout() ); // The layout type we want. We probably will need BoxLayout at some point
-	window.add(panel);
-	
+
 	//Users expect Menu Bars at the top of the man window, so we should get one
 	JMenuBar menuBar = new JMenuBar();
-	panel.add(menuBar);
+	window.setJMenuBar(menuBar);
+	
 	
 	//A Menu all about ones own schedule and events
 	JMenu scheduleMenu = new JMenu( "My Schedule" ); 
 	menuBar.add( scheduleMenu );
 	scheduleMenu.add( new JMenuItem("Show my Schedule...") );
 	scheduleMenu.add( new JMenuItem("Add a New Event...") );
-	
 	
 	//A Menu all about ones own schedule and events
 	JMenu groupsMenu = new JMenu( "My Groups" ); 
@@ -49,14 +44,14 @@ public class DodleView {
 	JMenu optionsMenu = new JMenu( "Options" );
 	menuBar.add( optionsMenu );
 	optionsMenu.add( new JMenuItem("Preferences...") );
+
+
 	
-	//If the user needs some help
-	JMenu helpMenu = new JMenu( "Help" );
-	menuBar.add( helpMenu );
-	helpMenu.add( new JMenuItem("About this program...") );
+	//we need a panel so that things can happen in dodle
+	JPanel panel = new JPanel();
+	panel.setLayout( new FlowLayout() ); 
+	window.add(panel);
 	
-	
-	//We want there to be Scrollbars around our main content area, so we need a ScrollPane
 	
 	
 	
